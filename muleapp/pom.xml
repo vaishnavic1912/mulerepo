@@ -43,7 +43,27 @@
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>					
 				</configuration>
-			</plugin>
+			</plugin>			
+			<plugin>
+				<groupId>org.sonatype.plugin</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>1.6.6</version>
+					<extensions>true</extensions>
+					<configuration>
+						<serverID>nexus</serverID>
+						<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+						<skipStaging>true</skipStaging>
+					</configuration>
+					<executions>
+						<execution>
+							<id>default-deploy</id>
+							<phase>deploy</phase>
+							<goals>
+							<goal>deploy</goal>
+							</goals>
+						</execution>
+					</executions>
+			</plugin>		
 		</plugins>
 	</build>
 
@@ -93,5 +113,12 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
+	
+	<distributionManagement>
+		<snapshotRepository>
+		<id>mulerelease</id>
+		<name>mulerelease</name>
+		<url>http://localhost:8081/repository/mulerepo1/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
