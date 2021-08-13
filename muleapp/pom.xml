@@ -5,7 +5,7 @@
 	<groupId>com.mycompany</groupId>
 	<artifactId>muleapp</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>muleVC</packaging>
+	<packaging>mule-application</packaging>
 
 	<name>muleapp</name>
 
@@ -116,8 +116,8 @@
 	
 	<distributionManagement>
 		<snapshotRepository>
-		<id>mulerelease</id>
-		<name>mulerelease</name>
+		<id>mulerepo1</id>
+		<name>mulerepo1</name>
 		<url>http://localhost:8081/repository/mulerepo1/</url>
 		</snapshotRepository>
 	</distributionManagement>
